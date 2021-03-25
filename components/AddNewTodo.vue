@@ -28,7 +28,7 @@
         <input
           v-model="form.title"
           type="text"
-          class="px-4 w-4/6 text-black placeholder-gray-400 focus:outline-none text-md"
+          class="px-4 flex-grow text-black placeholder-gray-400 focus:outline-none text-md"
           placeholder="e. G. update wordpress"
         />
         <button
