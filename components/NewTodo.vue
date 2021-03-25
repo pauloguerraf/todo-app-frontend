@@ -1,10 +1,10 @@
 <template>
-  <div>
-    <div class="flex text-black dark:text-white justify-between items-end">
+  <div v-if="$strapi.user !== null" class="py-8">
+    <div class="flex text-black dark:text-white justify-between items-end my-8">
       <p class="text-2xl">
         Hi, {{ $strapi.user.username }}. What are your ToDos for today?
       </p>
-      <p>
+      <p class="text-right">
         {{
           new Date()
             .toLocaleString(['en-US'], {
@@ -32,7 +32,7 @@
           placeholder="e. G. update wordpress"
         />
         <button
-          class="font-roboto border-l p-4 bg-white text-gray-400 disabled:text-gray-200 my-1"
+          class="font-roboto border-l p-4 bg-white text-gray-400 disabled:text-gray-200 my-1 cursor-hover disabled:cursor-not-allowed"
           :disabled="form.title === ''"
           type="submit"
         >

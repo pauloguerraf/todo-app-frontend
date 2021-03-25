@@ -64,8 +64,6 @@ export default {
           identifier: this.identifier,
           password: this.password,
         })
-        // eslint-disable-next-line no-console
-        console.log(user)
         if (user !== null) {
           this.error = ''
           this.$nuxt.$router.push('/todos')
