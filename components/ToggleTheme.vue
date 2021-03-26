@@ -1,5 +1,5 @@
 <template>
-  <div class="px-8">
+  <div class="pl-8">
     <button
       class="border bg-transparent dark:border-gray-500 border-gray-900 rounded-full focus:outline-none fill-current w-12 h-6 flex items-center"
       @click="toggle"

@@ -1,5 +1,5 @@
 <template>
-  <div class="w-9/12 sm:w-6/12 mx-auto h-full">
+  <div class="w-full sm:w-6/12 mx-auto h-full px-6 sm:px-0">
     <div v-show="error !== ''" class="w-1/2 mx-auto text-center">
       <div class="p-3 my-5 bg-yellow-500">
         <p>{{ error }}</p>
