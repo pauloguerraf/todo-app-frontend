@@ -6,7 +6,7 @@
       <p>{{ error }}</p>
     </div>
 
-    <form class="w-1/2" @submit="loginUser">
+    <form class="w-full sm:w-6/12 px-6 sm:px-0" @submit="loginUser">
       <div
         class="flex justify-between w-full border-gray-100 border shadow-lg rounded-md bg-white my-6"
       >
@@ -27,7 +27,7 @@
           placeholder="password"
         />
       </div>
-      <div class="w-full flex justify-between">
+      <div class="w-full flex sm:flex-row flex-col-reverse justify-between">
         <p class="my-5 py-2 text-black dark:text-white">
           Have no account?
           <NuxtLink

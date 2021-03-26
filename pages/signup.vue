@@ -1,11 +1,11 @@
 <template>
   <div
-    class="absolute top-0 w-full mx-auto h-full flex flex-col items-center justify-center"
+    class="absolute top-0 w-full mx-auto h-full flex flex-col items-center justify-center "
   >
     <div v-show="error !== ''" class="p-3 bg-yellow-500 w-1/2 mx-auto">
       <p>{{ error }}</p>
     </div>
-    <form class="w-1/2" @submit="createUser">
+    <form class="w-full sm:w-6/12 px-6 sm:px-0" @submit="createUser">
       <div
         class="flex justify-between w-full border-gray-100 border shadow-lg rounded-md bg-white my-6"
       >
