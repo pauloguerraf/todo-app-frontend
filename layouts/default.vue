@@ -10,8 +10,14 @@
 export default {}
 </script>
 <style>
+@font-face {
+  font-family: 'Walsheim';
+  src: url('~/assets/fonts/gt-walsheim-light-webfont.woff') format('woff'),
+    url('~/assets/fonts/gt-walsheim-light-webfont.woff2') format('woff2');
+}
 html {
   box-sizing: border-box;
+  font-family: 'Walsheim';
 }
 
 *,

@@ -10,7 +10,6 @@ module.exports = {
   theme: {
     fontFamily: {
       roboto: ['Roboto'],
-      train: ['Train One'],
     },
     extend: {
       colors: {
