@@ -45,6 +45,7 @@ export default {
   },
   strapi: {
     entities: ['todos'],
+    url: 'https://dorfjungstodos.herokuapp.com/',
   },
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
