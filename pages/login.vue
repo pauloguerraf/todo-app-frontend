@@ -6,7 +6,10 @@
       <p>{{ error }}</p>
     </div>
 
-    <form class="w-full sm:w-9/12 px-6 sm:px-0" @submit="loginUser">
+    <form
+      class="w-full sm:w-9/12 md:w-6/12 lg:w-1/3 px-6 sm:px-0"
+      @submit="loginUser"
+    >
       <div
         class="flex justify-between w-full border-gray-100 border shadow-lg rounded-md bg-white my-6"
       >
