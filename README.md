@@ -1,6 +1,6 @@
 # To-Do List App
 
-[![To-Do App](https://git.dorfjungs.io/Paulo/todo-app-frontend/src/branch/master/project_image.jpg)]()
+[![To-Do App](./project_image.jpg)]()
 
 > frontend implemented using NuxtJS
 
