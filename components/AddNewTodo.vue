@@ -56,19 +56,13 @@
 
 <script>
 export default {
-  middleware({ $strapi, redirect }) {
-    if (!$strapi.user) {
-      redirect('/todos')
-    }
-  },
   data() {
     return {
       form: {
         title: '',
-        done: false,
+        completed: false,
         users_permissions_user: this.$strapi.user,
       },
-      date: '',
     }
   },
   methods: {

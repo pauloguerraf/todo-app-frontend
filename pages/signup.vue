@@ -36,8 +36,10 @@
           placeholder="password"
         />
       </div>
-      <div class="w-full flex justify-between">
-        <p class="my-5 py-2 text-black dark:text-white">
+      <div class="w-full flex sm:flex-row flex-col-reverse justify-between">
+        <p
+          class="my-5 py-2 text-black dark:text-white sm:text-left text-center"
+        >
           I'm already registered.
           <NuxtLink
             to="/login"
