@@ -2,12 +2,16 @@
 
 > frontend implemented using NuxtJS
 
-## Installation
+## Local Install
 
 - clone this repository
 - yarn
 - yarn dev
 - go to http://localhost:3000/
+
+## Online Demo
+
+- go to https://cocky-bardeen-f154fc.netlify.app
 
 ## Test Login Credentials
 
