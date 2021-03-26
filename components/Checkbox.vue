@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-gray-300 dark:bg-black mx-1 w-10 h-10 flex justify-center items-center"
+    class="bg-gray-300 dark:bg-black w-12 h-10 flex justify-center items-center"
     @click="check(todo.id)"
   >
     <svg

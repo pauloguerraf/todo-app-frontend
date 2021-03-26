@@ -14,107 +14,128 @@
 
     <AddNewTodo @add-todo="addTodo" />
 
-    <div class="mx-auto flex flex-col">
-      <div
-        v-for="todo in uncompleted"
-        :key="todo.id"
-        class="rounded-md my-3 shadow-lg"
-      >
+    <Accordion v-if="showuncompleted" label="Open Tasks">
+      <div class="mx-auto flex flex-col">
         <div
-          class="flex justify-between items-center w-full dark:bg-dorfgray bg-gray-100"
+          v-for="todo in uncompleted"
+          :key="todo.id"
+          class="rounded-md my-1 shadow-lg"
         >
-          <Checkbox :todo="todo" @check="toggleTodo(todo.id, todo.completed)" />
-          <div class="w-full px-4">
-            <h3
-              :class="
-                todo.completed
-                  ? 'line-through dark:text-gray-500 text-gray-300'
-                  : 'dark:text-white'
-              "
-              class="m-3 text-left"
-            >
-              {{ todo.title }}
-            </h3>
-          </div>
-          <button
-            class="justify-self-end font-roboto px-4 py-2 mx-2 text-gray-500 dark:hover:text-white hover:text-gray-300 rounded-md fill-current"
-            @click="deleteTodo(todo.id)"
+          <div
+            class="flex justify-between items-center w-full dark:bg-dorfgray bg-gray-100 p-1"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-4 inline"
-              viewBox="0 0 65 65"
+            <Checkbox
+              :todo="todo"
+              @check="toggleTodo(todo.id, todo.completed)"
+            />
+            <div class="w-full px-4">
+              <h3
+                :class="
+                  todo.completed
+                    ? 'line-through dark:text-gray-500 text-gray-300'
+                    : 'dark:text-white'
+                "
+                class="m-2 text-left"
+              >
+                {{ todo.title }}
+              </h3>
+            </div>
+            <button
+              class="justify-self-end font-roboto px-4 py-2 mx-2 text-gray-500 dark:hover:text-white hover:text-gray-300 rounded-md fill-current"
+              @click="deleteTodo(todo.id)"
             >
-              <g>
-                <path
-                  d="M65,6.57,58.43,0,32.5,25.93,6.57,0,0,6.57,25.93,32.5,0,58.43,6.57,65,32.5,39.07,58.43,65,65,58.43,39.07,32.5Z"
-                />
-              </g>
-            </svg>
-          </button>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 inline"
+                viewBox="0 0 65 65"
+              >
+                <g>
+                  <path
+                    d="M65,6.57,58.43,0,32.5,25.93,6.57,0,0,6.57,25.93,32.5,0,58.43,6.57,65,32.5,39.07,58.43,65,65,58.43,39.07,32.5Z"
+                  />
+                </g>
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="mx-auto flex flex-col">
-      <div
-        v-for="todo in completed"
-        :key="todo.id"
-        class="rounded-md my-3 shadow-lg"
-      >
+    </Accordion>
+    <Accordion v-if="showcompleted" label="Finished Tasks"
+      ><div class="mx-auto flex flex-col">
         <div
-          class="flex justify-between items-center w-full dark:bg-dorfgray bg-gray-100"
+          v-for="todo in completed"
+          :key="todo.id"
+          class="rounded-md my-1 shadow-lg"
         >
-          <Checkbox :todo="todo" @check="toggleTodo(todo.id, todo.completed)" />
-          <div class="w-full px-4">
-            <h3
-              :class="
-                todo.completed
-                  ? 'line-through dark:text-gray-500 text-gray-400'
-                  : 'dark:text-white'
-              "
-              class="m-3 text-left"
-            >
-              {{ todo.title }}
-            </h3>
-          </div>
-          <button
-            class="justify-self-end font-roboto px-4 py-2 mx-2 text-gray-500 dark:hover:text-white hover:text-gray-300 rounded-md fill-current"
-            @click="deleteTodo(todo.id)"
+          <div
+            class="flex justify-between items-center w-full dark:bg-dorfgray bg-gray-100 p-1"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-4 inline"
-              viewBox="0 0 65 65"
+            <Checkbox
+              :todo="todo"
+              @check="toggleTodo(todo.id, todo.completed)"
+            />
+            <div class="w-full px-4">
+              <h3
+                :class="
+                  todo.completed
+                    ? 'line-through dark:text-gray-500 text-gray-400'
+                    : 'dark:text-white'
+                "
+                class="m-2 text-left"
+              >
+                {{ todo.title }}
+              </h3>
+            </div>
+            <button
+              class="justify-self-end font-roboto px-4 py-2 text-gray-500 dark:hover:text-white hover:text-gray-300 rounded-md fill-current"
+              @click="deleteTodo(todo.id)"
             >
-              <g>
-                <path
-                  d="M65,6.57,58.43,0,32.5,25.93,6.57,0,0,6.57,25.93,32.5,0,58.43,6.57,65,32.5,39.07,58.43,65,65,58.43,39.07,32.5Z"
-                />
-              </g>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 inline"
+                viewBox="0 0 65 65"
+              >
+                <g>
+                  <path
+                    d="M65,6.57,58.43,0,32.5,25.93,6.57,0,0,6.57,25.93,32.5,0,58.43,6.57,65,32.5,39.07,58.43,65,65,58.43,39.07,32.5Z"
+                  />
+                </g>
+              </svg>
+            </button>
+          </div>
+        </div></div
+    ></Accordion>
   </div>
 </template>
 <script>
 export default {
   async asyncData({ $strapi }) {
-    const completed = await $strapi.$todos.find({
-      'users_permissions_user.id': [$strapi.user.id],
-      completed: true,
-    })
-    const uncompleted = await $strapi.$todos.find({
-      'users_permissions_user.id': [$strapi.user.id],
-      completed: false,
-    })
-    return { completed, uncompleted }
+    if ($strapi.user) {
+      const completed = await $strapi.$todos.find({
+        'users_permissions_user.id': [$strapi.user.id],
+        completed: true,
+      })
+      const uncompleted = await $strapi.$todos.find({
+        'users_permissions_user.id': [$strapi.user.id],
+        completed: false,
+      })
+      return { completed, uncompleted }
+    }
   },
   data() {
     return {
       error: '',
     }
+  },
+  computed: {
+    showuncompleted() {
+      if (this.uncompleted) return this.uncompleted.length > 0
+      else return false
+    },
+    showcompleted() {
+      if (this.completed) return this.completed.length > 0
+      else return false
+    },
   },
   mounted() {
     this.checkLogin()
